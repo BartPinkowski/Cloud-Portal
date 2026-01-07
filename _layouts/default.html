@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ page.title }} · {{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}" />
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+        <nav class="nav">
+          {% for item in site.nav %}
+            <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      {% if page.hero %}
+        <section class="hero">
+          <h1>{{ page.hero.title }}</h1>
+          <p class="lead">{{ page.hero.lead }}</p>
+          {% if page.hero.cta_url and page.hero.cta_text %}
+            <a class="button" href="{{ page.hero.cta_url }}">{{ page.hero.cta_text }}</a>
+          {% endif %}
+        </section>
+      {% endif %}
+
+      <article class="content">
+        {{ content }}
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© {{ "now" | date: "%Y" }} {{ site.title }} · Built with Jekyll</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+title: Cloud & Data Hub
+description: Roadmaps, labs, and mentoring to become job-ready in Cloud & Data Engineering.
+url: ""          # zostaw puste na start
+baseurl: ""      # zostaw puste na start
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+
+# proste menu (użyjemy w layoucie)
+nav:
+  - title: Home
+    url: /
+  - title: Roadmap
+    url: /roadmap/
+  - title: Labs
+    url: /labs/
+  - title: Blog
+    url: /blog/
+  - title: About
+    url: /about/
